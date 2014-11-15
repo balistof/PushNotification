@@ -141,6 +141,12 @@ public class GCMIntentService extends GCMBaseIntentService {
     mNotificationManager.notify((String) appName, notId, mBuilder.build());
   }
 
+  public static void cancelNotification(Context context)
+	{
+		NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+		mNotificationManager.cancel((String)getAppName(context), NOTIFICATION_ID);	
+	}
+
   private static String getAppName(Context context)
   {
     CharSequence appName =
