@@ -63,12 +63,4 @@ public class PushHandlerActivity extends Activity
 		Intent launchIntent = pm.getLaunchIntentForPackage(getApplicationContext().getPackageName());    		
 		startActivity(launchIntent);
 	}
-
-  @Override
-  protected void onResume() {
-    super.onResume();
-    final NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
-    notificationManager.cancelAll();
-  }
-
 }
